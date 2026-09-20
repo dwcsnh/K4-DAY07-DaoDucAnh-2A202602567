@@ -166,7 +166,7 @@ Chạy script kiểm tra theo checklist mục 6 của `docs/DATA_COLLECTION.md`,
 python -c "
 import csv, re
 from pathlib import Path
-D = Path('data/<ten-chu-de>')
+D = Path('data/scholarship')
 REQ = ['doc_id','title','source_url','retrieved_at','document_version','audience']
 mds = sorted(D.glob('*.md'))
 rows = list(csv.DictReader(open(D/'sources.csv', encoding='utf-8')))

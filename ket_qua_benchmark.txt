@@ -1,0 +1,85 @@
+=================================================================
+           KẾT QUẢ BENCHMARK RETRIEVAL — LAB 07
+ Chiến lược: SENTENCES (SentenceChunker)
+ Thư mục dữ liệu: data/scholarship (10 files .md)
+ Số câu hỏi benchmark: 5 câu (load từ JSON)
+ Embedding backend: text-embedding-3-small
+=================================================================
+
+[+] Đã chia nhỏ và nạp tổng cộng 40 chunks vào EmbeddingStore.
+
+-----------------------------------------------------------------
+CÂU HỎI 1: Mức học bổng khuyến khích học tập kì cuối cho sinh viên loại Xuất sắc ngành CLC CNTT khóa QH-2022 là bao nhiêu?
+  • Filter: {'audience': 'student'}
+  • Gold Doc: cap-hoc-bong-khuyen-khich-hoc-tap-ki-cuoi-thang-06-2026
+  • Gold Answer: 4.100.000 đồng/sinh viên/tháng (theo Quyết định số 1545/QĐ-ĐHCN).
+  • Từ khóa kiểm tra đáp án: ['4.100.000', 'Xuất sắc', 'QH-2022']
+  [1] Score: 0.6994 | doc_id: cap-hoc-bong-khuyen-khich-hoc-tap-ki-cuoi-thang-06-2026 ===> [TRÚNG GOLD DOC | CHỨA TỪ KHÓA ĐÁP ÁN]
+      Snippet: Học bổng khuyến khích học tập được cấp theo định mức:  Chương trình đào tạo Mức học bổng/sinh viên/tháng  Loại Xuất sắc ...
+  [2] Score: 0.6012 | doc_id: cap-hoc-bong-khuyen-khich-hoc-tap-ki-cuoi-thang-06-2026 ===> [TRÚNG GOLD DOC]
+      Snippet: # Cấp học bổng khuyến khích học tập kì cuối cho sinh viên tốt nghiệp đợt xét tháng 06 năm 2026  Cấp học bổng khuyến khíc...
+  [3] Score: 0.5860 | doc_id: chuong-trinh-hoc-bong-tai-nang-pegatron-2027 
+      Snippet: # Chương trình Học bổng Tài năng Pegatron 2027  Chương trình Học bổng Tài năng Pegatron 2027 - Trường Đại học Công Nghệ ...
+  ==> Đánh giá: 2/2 điểm (Gold Doc: Top-1 | Chứa đáp án thực tế: CÓ (Top-1))
+
+-----------------------------------------------------------------
+CÂU HỎI 2: Mỗi suất học bổng Vallet năm 2026 dành cho sinh viên Trường ĐHCN trị giá bao nhiêu và lễ trao học bổng diễn ra ở đâu?
+  • Filter: None
+  • Gold Doc: ket-qua-xet-chon-hoc-bong-vallet-2026
+  • Gold Answer: Trị giá 34.000.000 đồng; tổ chức tại Hội trường Nhà Thái Học, Văn Miếu – Quốc Tử Giám (58 Quốc Tử Giám, Hà Nội) lúc 07h30 ngày 23/08/2026.
+  • Từ khóa kiểm tra đáp án: ['34.000.000', 'Thái Học', 'Văn Miếu']
+  [1] Score: 0.6773 | doc_id: ket-qua-xet-chon-hoc-bong-vallet-2026 ===> [TRÚNG GOLD DOC]
+      Snippet: # Kết quả xét chọn học bổng Vallet dành cho sinh viên Trường Đại học Công nghệ, Đại học Quốc gia Hà Nội năm 2026  Kết qu...
+  [2] Score: 0.6550 | doc_id: cap-hoc-bong-khuyen-khich-hoc-tap-ki-cuoi-thang-06-2026 
+      Snippet: Học bổng khuyến khích học tập được cấp theo định mức:  Chương trình đào tạo Mức học bổng/sinh viên/tháng  Loại Xuất sắc ...
+  [3] Score: 0.6130 | doc_id: chuong-trinh-hoc-bong-dinh-thien-ly-nam-cuoi-2026-2027 
+      Snippet: Hội đồng xét chọn sinh viên nhận học bổng năm học 2026-2027 của ĐHQGHN sẽ xét chọn  trong số các danh sách đề cử của các...
+  ==> Đánh giá: 2/2 điểm (Gold Doc: Top-1 | Chứa đáp án thực tế: KHÔNG)
+
+-----------------------------------------------------------------
+CÂU HỎI 3: Sinh viên cần đáp ứng những tiêu chuẩn gì về GPA, rèn luyện và ngoại ngữ để được xét chọn Học bổng Tài năng Pegatron 2027?
+  • Filter: None
+  • Gold Doc: chuong-trinh-hoc-bong-tai-nang-pegatron-2027
+  • Gold Answer: GPA năm học 2025-2026 từ 2.8 trở lên, kết quả rèn luyện loại Tốt trở lên, có khả năng dùng tiếng Anh/tiếng Trung và phải hoàn thành chứng chỉ tiếng Trung HSK3 trước khi thực tập tại công ty.
+  • Từ khóa kiểm tra đáp án: ['2,8', 'Tốt', 'HSK3']
+  [1] Score: 0.7233 | doc_id: chuong-trinh-hoc-bong-tai-nang-pegatron-2027 ===> [TRÚNG GOLD DOC | CHỨA TỪ KHÓA ĐÁP ÁN]
+      Snippet: # Chương trình Học bổng Tài năng Pegatron 2027  Chương trình Học bổng Tài năng Pegatron 2027 - Trường Đại học Công Nghệ ...
+  [2] Score: 0.6352 | doc_id: chuong-trinh-hoc-bong-tai-nang-pegatron-2027 ===> [TRÚNG GOLD DOC]
+      Snippet: Số lượng cụ thể được Công ty TNHH Pegatron Việt Nam thống nhất trong quá trình triển khai chương trình. 4. Quy trình đăn...
+  [3] Score: 0.6327 | doc_id: chuong-trinh-hoc-bong-tai-nang-pegatron-2027 ===> [TRÚNG GOLD DOC | CHỨA TỪ KHÓA ĐÁP ÁN]
+      Snippet: Giá trị và quyền lợi học bổng  Tổng giá trị mỗi suất học bổng lên đến 31.000.000 đồng/sinh viên, bao gồm:  –  Học bổng b...
+  ==> Đánh giá: 2/2 điểm (Gold Doc: Top-1 | Chứa đáp án thực tế: CÓ (Top-1))
+
+-----------------------------------------------------------------
+CÂU HỎI 4: Hồ sơ đăng ký học bổng Đinh Thiện Lý dành cho sinh viên năm cuối gồm những giấy tờ gì và hạn nộp là khi nào?
+  • Filter: None
+  • Gold Doc: chuong-trinh-hoc-bong-dinh-thien-ly-nam-cuoi-2026-2027
+  • Gold Answer: Đơn đăng ký online; bảng điểm tích lũy có xác nhận; bài luận tiếng Anh tối đa 500 từ; 1 thư giới thiệu; minh chứng NCKH/ngoại khóa; video giới thiệu <=3 phút; giấy tờ khó khăn (nếu có). Hạn trước 16h30 ngày 21/7/2026.
+  • Từ khóa kiểm tra đáp án: ['500 từ', '21/7/2026']
+  [1] Score: 0.6726 | doc_id: chuong-trinh-hoc-bong-dinh-thien-ly-nam-cuoi-2026-2027 ===> [TRÚNG GOLD DOC | CHỨA TỪ KHÓA ĐÁP ÁN]
+      Snippet: Hội đồng xét chọn sinh viên nhận học bổng năm học 2026-2027 của ĐHQGHN sẽ xét chọn  trong số các danh sách đề cử của các...
+  [2] Score: 0.6435 | doc_id: hoc-bong-data-nest-nam-hoc-2026-2027 
+      Snippet: Sau khi được Hội đồng Thi đua khen thưởng xét, phòng CTSV sẽ thông báo để các sinh viên xin bảng điểm, ghép và nộp lại b...
+  [3] Score: 0.6431 | doc_id: hoc-bong-data-nest-nam-hoc-2026-2027 
+      Snippet: 5. Cách thức và thời hạn nộp hồ sơ đăng ký  Phòng CTSV sẽ bố trí cán bộ thu và rà soát hồ sơ học bổng từ 8h-17h ngày 18/...
+  ==> Đánh giá: 2/2 điểm (Gold Doc: Top-1 | Chứa đáp án thực tế: CÓ (Top-1))
+
+-----------------------------------------------------------------
+CÂU HỎI 5: Chương trình học bổng Goertek năm 2027 gồm những mô hình đào tạo nào và quyền lợi của từng mô hình là gì?
+  • Filter: None
+  • Gold Doc: chuong-trinh-hoc-bong-goertek-nam-2027
+  • Gold Answer: Gồm 2 mô hình: 1) Đào tạo tại VN: học bổng 60 triệu đồng, gói 21.000.000đ/SV trả 2 lần, thực tập tại Goertek Vina; 2) Đào tạo tại TQ: học bổng 80 triệu đồng, học tại ĐH Sơn Đông, miễn học phí, KTX, vé máy bay khứ hồi, gói 25.000.000đ/SV trả 2 lần.
+  • Từ khóa kiểm tra đáp án: ['60 triệu', '80 triệu', '21.000.000']
+  [1] Score: 0.7160 | doc_id: chuong-trinh-hoc-bong-goertek-nam-2027 ===> [TRÚNG GOLD DOC | CHỨA TỪ KHÓA ĐÁP ÁN]
+      Snippet: # Chương trình học bổng Goertek năm 2027  Chương trình học bổng Goertek năm 2027 - Trường Đại học Công Nghệ - Đại học Qu...
+  [2] Score: 0.6060 | doc_id: chuong-trinh-hoc-bong-goertek-nam-2027 ===> [TRÚNG GOLD DOC | CHỨA TỪ KHÓA ĐÁP ÁN]
+      Snippet: Mô hình đào tạo tại Trung Quốc – học bổng 80 triệu đồng: dự kiến 20 sinh viên; GPA từ 2,5 trở lên và không nợ môn tính đ...
+  [3] Score: 0.5350 | doc_id: chuong-trinh-hoc-bong-tai-nang-pegatron-2027 
+      Snippet: # Chương trình Học bổng Tài năng Pegatron 2027  Chương trình Học bổng Tài năng Pegatron 2027 - Trường Đại học Công Nghệ ...
+  ==> Đánh giá: 2/2 điểm (Gold Doc: Top-1 | Chứa đáp án thực tế: CÓ (Top-1))
+
+=================================================================
+TỔNG KẾT CHIẾN LƯỢC [SENTENCES]:
+  - Điểm Retrieval (theo doc_id): 10/10 điểm
+  - Số câu chứa chính xác đáp án thực tế trong top-3: 4/5
+=================================================================
